@@ -8,13 +8,15 @@ void showMenu() {
 	cout << "3. Quit" << endl;
 }
 
-void handleInput() {
+int getInput() {
 	cout << "Enter Selection: " << flush;
+	int aInput;
+	cin >> aInput;
+	return aInput;
+}
 
-	int input;
-	cin >> input;
-
-	switch (input)
+void update(int aInput) {
+	switch (aInput)
 	{
 	case 1:
 		cout << "Searching ..." << endl;
@@ -34,8 +36,9 @@ void handleInput() {
 int main() {
 
 	showMenu();
-	handleInput();
-
+	int input = getInput();
+	update(input);
+	
 
 
 	return 0;
