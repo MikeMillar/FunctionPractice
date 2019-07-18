@@ -2,14 +2,26 @@
 
 using namespace std;
 
+// Prototype or Declaration above main, allows you to write functions after main.
+void showMenu();
+int getInput();
+void update(int aInput);
+
+int main() {
+	showMenu();
+	int input = getInput();
+	update(input);
+	return 0;
+}
+
 void showMenu() {
 	cout << "1. Search" << endl;
 	cout << "2. View Record" << endl;
 	cout << "3. Quit" << endl;
+	cout << "Enter Selection: " << flush;
 }
 
 int getInput() {
-	cout << "Enter Selection: " << flush;
 	int aInput;
 	cin >> aInput;
 	return aInput;
@@ -31,15 +43,4 @@ void update(int aInput) {
 		cout << "Please select an item from the menu." << endl;
 		break;
 	}
-}
-
-int main() {
-
-	showMenu();
-	int input = getInput();
-	update(input);
-	
-
-
-	return 0;
 }
